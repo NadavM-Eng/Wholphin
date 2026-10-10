@@ -1,0 +1,23 @@
+[Script Info]
+Title: Original Hebrew and mixed direction test data
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,sans-serif,56,&H00FFFFFF,&H000000FF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,2,1,2,60,60,60,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:01.00,0:00:04.00,Default,,0,0,0,,שלום עולם!
+Dialogue: 0,0:00:04.00,0:00:07.00,Default,,0,0,0,,פרק 12 - Season 2, Episode 3
+Dialogue: 0,0:00:07.00,0:00:10.00,Default,,0,0,0,,"שלום", אמרה דנה (2026).
+Dialogue: 0,0:00:10.00,0:00:13.00,Default,,0,0,0,,כתובת: https://example.com/path?q=12
+Dialogue: 0,0:00:13.00,0:00:16.00,Default,,0,0,0,,שָׁלוֹם עוֹלָם — בדיקת ניקוד
+Dialogue: 0,0:00:16.00,0:00:20.00,Default,,0,0,0,,שורה ראשונה בעברית\NSecond line in English: 123, 45.6%
+Dialogue: 0,0:00:20.00,0:00:23.00,Default,,0,0,0,,{\an9\pos(1840,100)\c&H00FFFF&}טקסט ממוקם — Top right
+Dialogue: 0,0:00:23.00,0:00:26.00,Default,,0,0,0,,{\b1}מודגש{\b0} + {\i1}Italic English{\i0}
+Dialogue: 0,0:00:26.00,0:00:29.00,Default,,0,0,0,,{\fad(300,300)}בדיקת הופעה והיעלמות — Fade test

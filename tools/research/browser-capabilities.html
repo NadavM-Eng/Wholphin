@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wholphin browser media capability probe</title>
+<style>body{font:16px system-ui;margin:2rem;max-width:65rem}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style>
+<h1>Browser media capability probe</h1>
+<p>This probe queries advertised APIs and decoder capabilities. It does not play media or verify hardware decoding, HDR output, synchronization, or subtitle rendering.</p>
+<pre id="result">Running</pre>
+<script>
+(async () => {
+  const video = document.createElement('video');
+  const audio = document.createElement('audio');
+  const types = [
+    ['H264 and AAC in MP4', 'video', 'video/mp4; codecs="avc1.640028, mp4a.40.2"'],
+    ['HEVC in MP4', 'video', 'video/mp4; codecs="hvc1.1.6.L120.B0"'],
+    ['VP9 in WebM', 'video', 'video/webm; codecs="vp09.00.10.08, opus"'],
+    ['AV1 in MP4', 'video', 'video/mp4; codecs="av01.0.08M.08"'],
+    ['Matroska with H264', 'video', 'video/x-matroska; codecs="avc1.640028"'],
+    ['HLS', 'video', 'application/vnd.apple.mpegurl'],
+    ['AC3 in MP4', 'audio', 'audio/mp4; codecs="ac-3"'],
+    ['EAC3 in MP4', 'audio', 'audio/mp4; codecs="ec-3"'],
+    ['DTS', 'audio', 'audio/vnd.dts'],
+    ['TrueHD', 'audio', 'audio/true-hd'],
+    ['FLAC', 'audio', 'audio/flac'],
+    ['Opus', 'audio', 'audio/ogg; codecs="opus"'],
+  ];
+  const result = {
+    scope: 'Advertised support only. Empty canPlayType means unadvertised; probably/maybe is not proof that a particular file plays. This isolated headless browser is not a hardware playback test.',
+    user_agent: navigator.userAgent,
+    secure_context: isSecureContext,
+    cross_origin_isolated: crossOriginIsolated,
+    apis: {
+      media_source: typeof MediaSource !== 'undefined',
+      webcodecs_video_decoder: typeof VideoDecoder !== 'undefined',
+      webcodecs_audio_decoder: typeof AudioDecoder !== 'undefined',
+      media_capabilities: Boolean(navigator.mediaCapabilities),
+      webgpu: Boolean(navigator.gpu),
+      wasm: typeof WebAssembly !== 'undefined',
+      shared_array_buffer: typeof SharedArrayBuffer !== 'undefined',
+      browser_rtl_css: CSS.supports('direction', 'rtl'),
+      webvtt: typeof VTTCue !== 'undefined',
+    },
+    mime_types: types.map(([name, kind, type]) => ({
+      name, type, can_play_type: (kind === 'audio' ? audio : video).canPlayType(type),
+      media_source_type_supported: typeof MediaSource !== 'undefined' ? MediaSource.isTypeSupported(type) : null,
+    })),
+    webcodecs: [],
+  };
+  for (const codec of ['avc1.640028', 'hvc1.1.6.L120.B0', 'vp09.00.10.08', 'av01.0.08M.08']) {
+    if (typeof VideoDecoder === 'undefined') break;
+    try {
+      const support = await VideoDecoder.isConfigSupported({ codec, codedWidth: 1920, codedHeight: 1080 });
+      result.webcodecs.push({ codec, supported: support.supported });
+    } catch (error) { result.webcodecs.push({ codec, error: error.name }); }
+  }
+  document.querySelector('#result').textContent = JSON.stringify(result, null, 2);
+  document.documentElement.dataset.probeComplete = 'true';
+})();
+</script>
+</html>

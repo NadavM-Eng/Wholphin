@@ -1,0 +1,370 @@
+{
+  "research_date": "2026-10-11",
+  "scope": "A scoped public repository and issue search, limited to the first ten results per query. Negative search results do not establish that no private, unindexed, renamed, or differently described port exists.",
+  "results": [
+    {
+      "kind": "issues",
+      "query": "repo:damontecres/Wholphin desktop",
+      "status": 200,
+      "total_count": 9,
+      "incomplete_results": false,
+      "items": [
+        {
+          "number": 216,
+          "title": "[BUG] - Issue inherited from official app. When playing a strm file or any remote media for the first time, audio tracks and subtitles are not probed/toggle-able",
+          "url": "https://github.com/damontecres/Wholphin/issues/216",
+          "state": "open",
+          "created_at": "2025-11-14T08:11:51Z",
+          "updated_at": "2026-08-26T16:03:18Z",
+          "pull_request": false
+        },
+        {
+          "number": 462,
+          "title": "[BUG] - Crashes when trying to play  media with MPV backend",
+          "url": "https://github.com/damontecres/Wholphin/issues/462",
+          "state": "open",
+          "created_at": "2025-12-14T05:54:24Z",
+          "updated_at": "2026-02-25T11:39:45Z",
+          "pull_request": false
+        },
+        {
+          "number": 1124,
+          "title": "Add to playlist stuck on Loading...",
+          "url": "https://github.com/damontecres/Wholphin/issues/1124",
+          "state": "closed",
+          "created_at": "2026-03-20T17:05:23Z",
+          "updated_at": "2026-07-15T18:31:09Z",
+          "pull_request": false
+        },
+        {
+          "number": 1429,
+          "title": "Unable to sort by Release Date in Images (Home Videos & Folders) Library",
+          "url": "https://github.com/damontecres/Wholphin/issues/1429",
+          "state": "closed",
+          "created_at": "2026-05-21T20:39:43Z",
+          "updated_at": "2026-05-30T20:56:35Z",
+          "pull_request": false
+        },
+        {
+          "number": 1417,
+          "title": "Unable to sort by Release Date in Music Video library",
+          "url": "https://github.com/damontecres/Wholphin/issues/1417",
+          "state": "closed",
+          "created_at": "2026-05-20T18:56:22Z",
+          "updated_at": "2026-05-30T20:56:34Z",
+          "pull_request": false
+        },
+        {
+          "number": 975,
+          "title": "[BUG] - Crew credits missing on episode detail page.",
+          "url": "https://github.com/damontecres/Wholphin/issues/975",
+          "state": "closed",
+          "created_at": "2026-02-25T12:21:01Z",
+          "updated_at": "2026-02-27T01:27:23Z",
+          "pull_request": false
+        },
+        {
+          "number": 318,
+          "title": "[BUG] - Lack of mouse control",
+          "url": "https://github.com/damontecres/Wholphin/issues/318",
+          "state": "closed",
+          "created_at": "2025-11-24T21:22:59Z",
+          "updated_at": "2025-11-25T00:58:48Z",
+          "pull_request": false
+        },
+        {
+          "number": 1001,
+          "title": "Crash after activating the screen saver",
+          "url": "https://github.com/damontecres/Wholphin/issues/1001",
+          "state": "closed",
+          "created_at": "2026-02-26T08:29:06Z",
+          "updated_at": "2026-02-26T20:48:40Z",
+          "pull_request": false
+        },
+        {
+          "number": 552,
+          "title": "[BUG] - <title>Paused Video stops when sceensaver pops up.",
+          "url": "https://github.com/damontecres/Wholphin/issues/552",
+          "state": "closed",
+          "created_at": "2025-12-23T20:45:39Z",
+          "updated_at": "2025-12-26T16:07:44Z",
+          "pull_request": false
+        }
+      ]
+    },
+    {
+      "kind": "issues",
+      "query": "repo:damontecres/Wholphin browser",
+      "status": 200,
+      "total_count": 14,
+      "incomplete_results": false,
+      "items": [
+        {
+          "number": 1467,
+          "title": "Using Cast To device from browser / client (from another device) broken.",
+          "url": "https://github.com/damontecres/Wholphin/issues/1467",
+          "state": "open",
+          "created_at": "2026-05-26T23:49:23Z",
+          "updated_at": "2026-06-04T06:43:43Z",
+          "pull_request": false
+        },
+        {
+          "number": 1562,
+          "title": "App crashes a few seconds after starting playback on Chromecast with Google TV",
+          "url": "https://github.com/damontecres/Wholphin/issues/1562",
+          "state": "open",
+          "created_at": "2026-06-10T22:33:13Z",
+          "updated_at": "2026-09-17T09:32:48Z",
+          "pull_request": false
+        },
+        {
+          "number": 462,
+          "title": "[BUG] - Crashes when trying to play  media with MPV backend",
+          "url": "https://github.com/damontecres/Wholphin/issues/462",
+          "state": "open",
+          "created_at": "2025-12-14T05:54:24Z",
+          "updated_at": "2026-02-25T11:39:45Z",
+          "pull_request": false
+        },
+        {
+          "number": 1978,
+          "title": "Seeing issues with SRT subtitle format",
+          "url": "https://github.com/damontecres/Wholphin/issues/1978",
+          "state": "open",
+          "created_at": "2026-09-16T01:56:15Z",
+          "updated_at": "2026-09-16T01:56:15Z",
+          "pull_request": false
+        },
+        {
+          "number": 747,
+          "title": "[BUG] - <unable to login into seer>",
+          "url": "https://github.com/damontecres/Wholphin/issues/747",
+          "state": "open",
+          "created_at": "2026-01-22T15:51:30Z",
+          "updated_at": "2026-07-15T19:26:46Z",
+          "pull_request": false
+        },
+        {
+          "number": 1219,
+          "title": "I can't connect to the Jellyfin server on my local network.",
+          "url": "https://github.com/damontecres/Wholphin/issues/1219",
+          "state": "closed",
+          "created_at": "2026-04-08T09:19:41Z",
+          "updated_at": "2026-04-11T08:38:09Z",
+          "pull_request": false
+        },
+        {
+          "number": 600,
+          "title": "[FEA] - Autodetect existing users on selcted server and autofill username on login",
+          "url": "https://github.com/damontecres/Wholphin/issues/600",
+          "state": "closed",
+          "created_at": "2025-12-30T12:16:45Z",
+          "updated_at": "2026-05-10T12:50:10Z",
+          "pull_request": false
+        },
+        {
+          "number": 104,
+          "title": "[FEA] - Option to delete media",
+          "url": "https://github.com/damontecres/Wholphin/issues/104",
+          "state": "closed",
+          "created_at": "2025-10-29T10:23:11Z",
+          "updated_at": "2026-05-01T14:46:30Z",
+          "pull_request": false
+        },
+        {
+          "number": 69,
+          "title": "[FEA] - support mtls",
+          "url": "https://github.com/damontecres/Wholphin/issues/69",
+          "state": "closed",
+          "created_at": "2025-10-26T20:48:42Z",
+          "updated_at": "2026-04-30T16:41:33Z",
+          "pull_request": false
+        },
+        {
+          "number": 1079,
+          "title": "Without Internet, Seer Discover does not work, Debug log not capturing info",
+          "url": "https://github.com/damontecres/Wholphin/issues/1079",
+          "state": "closed",
+          "created_at": "2026-03-11T08:18:58Z",
+          "updated_at": "2026-03-14T23:18:10Z",
+          "pull_request": false
+        }
+      ]
+    },
+    {
+      "kind": "issues",
+      "query": "repo:damontecres/Wholphin \"web\"",
+      "status": 200,
+      "total_count": 133,
+      "incomplete_results": false,
+      "items": [
+        {
+          "number": 2023,
+          "title": "Subtitle menu missing from bottom navigation bar when playing remote media",
+          "url": "https://github.com/damontecres/Wholphin/issues/2023",
+          "state": "open",
+          "created_at": "2026-09-30T12:53:04Z",
+          "updated_at": "2026-10-01T17:52:00Z",
+          "pull_request": false
+        },
+        {
+          "number": 1900,
+          "title": "[Bug] Music Now Playing screen shows no artwork/colors despite item having Primary image",
+          "url": "https://github.com/damontecres/Wholphin/issues/1900",
+          "state": "open",
+          "created_at": "2026-08-24T20:16:58Z",
+          "updated_at": "2026-08-26T18:05:50Z",
+          "pull_request": false
+        },
+        {
+          "number": 2047,
+          "title": "Seerr integration shows Season 0 / Specials even when special episode requests are disabled",
+          "url": "https://github.com/damontecres/Wholphin/issues/2047",
+          "state": "open",
+          "created_at": "2026-10-08T02:24:51Z",
+          "updated_at": "2026-10-08T13:08:09Z",
+          "pull_request": false
+        },
+        {
+          "number": 1867,
+          "title": "WebSocket message timeout not respected",
+          "url": "https://github.com/damontecres/Wholphin/issues/1867",
+          "state": "open",
+          "created_at": "2026-08-18T19:54:16Z",
+          "updated_at": "2026-08-19T12:50:53Z",
+          "pull_request": false
+        },
+        {
+          "number": 526,
+          "title": "[FEA] - Dual Subtitles Support",
+          "url": "https://github.com/damontecres/Wholphin/issues/526",
+          "state": "open",
+          "created_at": "2025-12-21T04:26:10Z",
+          "updated_at": "2026-09-28T04:56:11Z",
+          "pull_request": false
+        },
+        {
+          "number": 203,
+          "title": "[FEA] - SyncPlay",
+          "url": "https://github.com/damontecres/Wholphin/issues/203",
+          "state": "open",
+          "created_at": "2025-11-12T20:30:07Z",
+          "updated_at": "2026-08-26T09:25:26Z",
+          "pull_request": false
+        },
+        {
+          "number": 2021,
+          "title": "Dolby Vision files tagged DOVIInvalid are always transcoded on Jellyfin 10.11+, even on devices that play them fine",
+          "url": "https://github.com/damontecres/Wholphin/issues/2021",
+          "state": "open",
+          "created_at": "2026-09-30T12:29:18Z",
+          "updated_at": "2026-10-06T17:42:12Z",
+          "pull_request": false
+        },
+        {
+          "number": 1023,
+          "title": "Youtube videos in library are missing thumbnail",
+          "url": "https://github.com/damontecres/Wholphin/issues/1023",
+          "state": "open",
+          "created_at": "2026-03-01T21:34:40Z",
+          "updated_at": "2026-09-08T13:47:27Z",
+          "pull_request": false
+        },
+        {
+          "number": 2014,
+          "title": "Live TV fails with HTSP Tuner in both players, but works in the official Android TV app",
+          "url": "https://github.com/damontecres/Wholphin/issues/2014",
+          "state": "open",
+          "created_at": "2026-09-28T18:27:56Z",
+          "updated_at": "2026-09-28T18:29:16Z",
+          "pull_request": false
+        },
+        {
+          "number": 1225,
+          "title": "Extra placeholders for movies already listed in collections",
+          "url": "https://github.com/damontecres/Wholphin/issues/1225",
+          "state": "open",
+          "created_at": "2026-04-09T19:10:21Z",
+          "updated_at": "2026-04-23T01:21:09Z",
+          "pull_request": false
+        }
+      ]
+    },
+    {
+      "kind": "repositories",
+      "query": "Wholphin web in:name,description fork:true",
+      "status": 200,
+      "total_count": 5,
+      "incomplete_results": false,
+      "items": [
+        {
+          "full_name": "yunfie-twitter/Wholphin",
+          "url": "https://github.com/yunfie-twitter/Wholphin",
+          "created_at": "2026-03-14T02:37:37Z",
+          "updated_at": "2026-03-14T02:37:57Z",
+          "pull_request": false
+        },
+        {
+          "full_name": "SloMR/jellyfin-plugin-dedupe-continue-watching",
+          "url": "https://github.com/SloMR/jellyfin-plugin-dedupe-continue-watching",
+          "created_at": "2026-04-28T15:49:56Z",
+          "updated_at": "2026-10-09T23:18:35Z",
+          "pull_request": false
+        },
+        {
+          "full_name": "jaysolack-web/Wholphin",
+          "url": "https://github.com/jaysolack-web/Wholphin",
+          "created_at": "2026-10-10T18:07:39Z",
+          "updated_at": "2026-10-10T18:07:39Z",
+          "pull_request": false
+        },
+        {
+          "full_name": "philipkraeutl/jellyfin-plugin-dedupe-continue-watching-enhanced",
+          "url": "https://github.com/philipkraeutl/jellyfin-plugin-dedupe-continue-watching-enhanced",
+          "created_at": "2026-08-13T09:08:11Z",
+          "updated_at": "2026-09-18T20:43:05Z",
+          "pull_request": false
+        },
+        {
+          "full_name": "delision/jellyfin-plugin-dedupe-continue-watching",
+          "url": "https://github.com/delision/jellyfin-plugin-dedupe-continue-watching",
+          "created_at": "2026-09-09T09:05:38Z",
+          "updated_at": "2026-09-09T10:16:32Z",
+          "pull_request": false
+        }
+      ]
+    },
+    {
+      "kind": "repositories",
+      "query": "Wholphin desktop in:name,description fork:true",
+      "status": 200,
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    },
+    {
+      "kind": "issues",
+      "query": "repo:DonutWare/Fladder Hebrew",
+      "status": 200,
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    },
+    {
+      "kind": "issues",
+      "query": "repo:DonutWare/Fladder \"audio sync\"",
+      "status": 200,
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    },
+    {
+      "kind": "issues",
+      "query": "repo:DonutWare/Fladder \"subtitle delay\"",
+      "status": 200,
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  ]
+}

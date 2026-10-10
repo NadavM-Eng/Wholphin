@@ -1,0 +1,97 @@
+{
+  "research_date": "2026-10-11",
+  "timezone": "Asia/Jerusalem",
+  "workspace": "D:/General/Wholphin_BUT_For_Web",
+  "upstream": "https://github.com/damontecres/Wholphin",
+  "fork": "https://github.com/NadavM-Eng/Wholphin",
+  "fork_status": "Existing fork reused; parent relationship verified via GitHub API.",
+  "fork_main_at_start": "7581b189aab8112b636b8fb60a9ec0d41e566afe",
+  "assessment_branch": "research/browser-desktop-assessment",
+  "phase": "Assessment complete; runtime and port implementation pending.",
+  "comparisons": [
+    {
+      "name": "Wholphin",
+      "repository": "https://github.com/damontecres/Wholphin",
+      "commit": "d6523ce856f7066c35bc9df8b514a8d6b876f06c",
+      "commit_date": "2026-10-09T17:58:12-04:00",
+      "inspection": "Source only; not tested as a running client."
+    },
+    {
+      "name": "wholphin-extensions",
+      "repository": "https://github.com/damontecres/wholphin-extensions",
+      "tag": "v0.2.4",
+      "commit": "cbb4af14c8e61845440ef2281096fc05e8976027",
+      "commit_date": "2026-09-11T15:20:55-04:00",
+      "inspection": "Source only; not tested as a running client."
+    },
+    {
+      "name": "Jellyfin Kotlin SDK",
+      "repository": "https://github.com/jellyfin/jellyfin-sdk-kotlin",
+      "tag": "v1.7.1",
+      "commit": "32d9840bf2d9f36c43e2d254efdbb696877e1867",
+      "commit_date": "2025-10-03T21:12:41+02:00",
+      "inspection": "Source only; not tested as a running client."
+    },
+    {
+      "name": "Fladder",
+      "repository": "https://github.com/DonutWare/Fladder",
+      "commit": "91992fcd48cd83baaac1a979345e386e43beddc0",
+      "commit_date": "2026-09-18T22:20:54+02:00",
+      "inspection": "Source only; not tested as a running client."
+    },
+    {
+      "name": "Jellyfin Desktop",
+      "repository": "https://github.com/jellyfin/jellyfin-desktop",
+      "commit": "2cb4a4456fd29b5b62d825ef0e5df93ed6913328",
+      "commit_date": "2026-08-31T09:43:51+02:00",
+      "inspection": "Source only; not tested as a running client."
+    },
+    {
+      "name": "Jellyfin MPV Shim",
+      "repository": "https://github.com/jellyfin/jellyfin-mpv-shim",
+      "commit": "437ac000aaec27e3b43042b31ad2f3d4cad2cd47",
+      "commit_date": "2026-10-10T15:17:17Z",
+      "inspection": "Source only; not tested as a running client."
+    },
+    {
+      "name": "Google Android Emulator Container Scripts",
+      "repository": "https://github.com/google/android-emulator-container-scripts",
+      "commit": "0aa7b0dc0556a8fa1827bf5c8a2f2a04e5301fb6",
+      "commit_date": "2026-10-05T19:44:03-07:00",
+      "inspection": "Source only; not tested as a running client."
+    },
+    {
+      "name": "ws-scrcpy",
+      "repository": "https://github.com/NetrisTV/ws-scrcpy",
+      "commit": "cd6cea6ebde17af6685c2b325183fc24bef9d52b",
+      "commit_date": "2026-09-30T09:19:06+03:00",
+      "inspection": "Source only; not tested as a running client."
+    }
+  ],
+  "validation": {
+    "gradle_version": {
+      "result": "passed",
+      "version": "9.6.1",
+      "launcher_jvm": "21.0.10",
+      "os": "Windows 11 amd64"
+    },
+    "gradle_help": "passed",
+    "apk_assemble": "failed: Android SDK location missing",
+    "native_extensions": "not resolved; MPV stub selected",
+    "browser_probe": "passed advertised-capability query only; no playback",
+    "runtime_playback": "not performed",
+    "subtitle_hebrew_rendering": "not performed",
+    "hdr_and_audio_passthrough": "not performed",
+    "research_artifacts": {
+      "javascript_syntax": "passed",
+      "json_parsing": "passed",
+      "local_and_pinned_source_links": {
+        "checked": 270,
+        "failures": 0
+      },
+      "source_inventory_rebuild": "deterministic",
+      "localization_inventory": "matched independent XML parsing",
+      "upstream_application_files": "unchanged"
+    }
+  }
+}

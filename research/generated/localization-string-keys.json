@@ -1,0 +1,86 @@
+{
+  "scope": "String elements in the two strings.xml files only, excluding XML comments. Missing keys may be non-translatable or intentionally use Android fallback. This does not measure plurals, arrays, all resource variants, text entry, RTL layout, fonts, or subtitle rendering.",
+  "baseline_commit": "d6523ce856f7066c35bc9df8b514a8d6b876f06c",
+  "base_strings": 647,
+  "hebrew_strings": 628,
+  "missing_hebrew_keys": [
+    {
+      "name": "app_name",
+      "translatable": false
+    },
+    {
+      "name": "app_name_long",
+      "translatable": false
+    },
+    {
+      "name": "pref_key_update_last_check_threshold",
+      "translatable": false
+    },
+    {
+      "name": "pref_key_update_last_check",
+      "translatable": false
+    },
+    {
+      "name": "prefer_dovi_over_hdr10_plus",
+      "translatable": true
+    },
+    {
+      "name": "prefer_dovi_over_hdr10_plus_summary",
+      "translatable": true
+    },
+    {
+      "name": "exoplayer",
+      "translatable": false
+    },
+    {
+      "name": "mpv",
+      "translatable": false
+    },
+    {
+      "name": "remove_from_playlist",
+      "translatable": true
+    },
+    {
+      "name": "login_credentials_expired",
+      "translatable": true
+    },
+    {
+      "name": "login_not_authorized",
+      "translatable": true
+    },
+    {
+      "name": "max_resolution",
+      "translatable": true
+    },
+    {
+      "name": "resolution_8k",
+      "translatable": true
+    },
+    {
+      "name": "resolution_4k",
+      "translatable": true
+    },
+    {
+      "name": "resolution_1080",
+      "translatable": true
+    },
+    {
+      "name": "resolution_720",
+      "translatable": true
+    },
+    {
+      "name": "resolution_576",
+      "translatable": true
+    },
+    {
+      "name": "resolution_480",
+      "translatable": true
+    },
+    {
+      "name": "resolution_360",
+      "translatable": true
+    }
+  ],
+  "base_source_url": "https://github.com/damontecres/Wholphin/blob/d6523ce856f7066c35bc9df8b514a8d6b876f06c/app/src/main/res/values/strings.xml",
+  "hebrew_source_url": "https://github.com/damontecres/Wholphin/blob/d6523ce856f7066c35bc9df8b514a8d6b876f06c/app/src/main/res/values-iw/strings.xml"
+}

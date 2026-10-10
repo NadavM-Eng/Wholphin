@@ -1,0 +1,110 @@
+{
+  "research_date": "2026-10-11",
+  "scope": "Advertised support only. Empty canPlayType means unadvertised; probably/maybe is not proof that a particular file plays. This isolated headless browser is not a hardware playback test.",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+  "secure_context": true,
+  "cross_origin_isolated": false,
+  "apis": {
+    "media_source": true,
+    "webcodecs_video_decoder": true,
+    "webcodecs_audio_decoder": true,
+    "media_capabilities": true,
+    "webgpu": true,
+    "wasm": true,
+    "shared_array_buffer": false,
+    "browser_rtl_css": true,
+    "webvtt": true
+  },
+  "mime_types": [
+    {
+      "name": "H264 and AAC in MP4",
+      "type": "video/mp4; codecs=\"avc1.640028, mp4a.40.2\"",
+      "can_play_type": "probably",
+      "media_source_type_supported": true
+    },
+    {
+      "name": "HEVC in MP4",
+      "type": "video/mp4; codecs=\"hvc1.1.6.L120.B0\"",
+      "can_play_type": "probably",
+      "media_source_type_supported": true
+    },
+    {
+      "name": "VP9 in WebM",
+      "type": "video/webm; codecs=\"vp09.00.10.08, opus\"",
+      "can_play_type": "probably",
+      "media_source_type_supported": true
+    },
+    {
+      "name": "AV1 in MP4",
+      "type": "video/mp4; codecs=\"av01.0.08M.08\"",
+      "can_play_type": "probably",
+      "media_source_type_supported": true
+    },
+    {
+      "name": "Matroska with H264",
+      "type": "video/x-matroska; codecs=\"avc1.640028\"",
+      "can_play_type": "probably",
+      "media_source_type_supported": false
+    },
+    {
+      "name": "HLS",
+      "type": "application/vnd.apple.mpegurl",
+      "can_play_type": "maybe",
+      "media_source_type_supported": false
+    },
+    {
+      "name": "AC3 in MP4",
+      "type": "audio/mp4; codecs=\"ac-3\"",
+      "can_play_type": "",
+      "media_source_type_supported": false
+    },
+    {
+      "name": "EAC3 in MP4",
+      "type": "audio/mp4; codecs=\"ec-3\"",
+      "can_play_type": "",
+      "media_source_type_supported": false
+    },
+    {
+      "name": "DTS",
+      "type": "audio/vnd.dts",
+      "can_play_type": "",
+      "media_source_type_supported": false
+    },
+    {
+      "name": "TrueHD",
+      "type": "audio/true-hd",
+      "can_play_type": "",
+      "media_source_type_supported": false
+    },
+    {
+      "name": "FLAC",
+      "type": "audio/flac",
+      "can_play_type": "probably",
+      "media_source_type_supported": false
+    },
+    {
+      "name": "Opus",
+      "type": "audio/ogg; codecs=\"opus\"",
+      "can_play_type": "probably",
+      "media_source_type_supported": false
+    }
+  ],
+  "webcodecs": [
+    {
+      "codec": "avc1.640028",
+      "supported": true
+    },
+    {
+      "codec": "hvc1.1.6.L120.B0",
+      "supported": true
+    },
+    {
+      "codec": "vp09.00.10.08",
+      "supported": true
+    },
+    {
+      "codec": "av01.0.08M.08",
+      "supported": true
+    }
+  ]
+}
