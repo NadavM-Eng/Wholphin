@@ -1,0 +1,33 @@
+{
+  "connection": "connected",
+  "videoWidth": 1280,
+  "videoHeight": 720,
+  "currentTime": 172.621754,
+  "totalVideoFrames": 3845,
+  "droppedVideoFrames": 0,
+  "media": [
+    {
+      "kind": "audio",
+      "codec": "audio/opus",
+      "packets": 8639,
+      "jitter": 0.006,
+      "totalAudioEnergy": 0.000018703998780399373,
+      "packetsLost": 0
+    },
+    {
+      "kind": "video",
+      "codec": "video/VP8",
+      "packets": 15930,
+      "framesDecoded": 3845,
+      "framesPerSecond": 22,
+      "jitter": 0.001,
+      "packetsLost": 0
+    }
+  ],
+  "lastControl": {
+    "ok": true,
+    "id": 1,
+    "elapsed_ms": 100.9,
+    "roundtrip_ms": 104.1
+  }
+}

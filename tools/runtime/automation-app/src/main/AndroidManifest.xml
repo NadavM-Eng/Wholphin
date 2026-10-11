@@ -1,0 +1,5 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application android:label="Wholphin Runtime Control" android:debuggable="true" />
+    <instrumentation android:name=".ControlInstrumentation" android:targetPackage="org.wholphin.runtime.control" android:label="Wholphin Runtime Control" />
+</manifest>

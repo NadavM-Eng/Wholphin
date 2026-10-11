@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-11",
+  "type": "local streamed Android prototype",
+  "application_source_changed": false,
+  "source_baseline": "d6523ce856f7066c35bc9df8b514a8d6b876f06c",
+  "playback_reference": {
+    "repository": "damontecres/Wholphin",
+    "release": "v1.0.8",
+    "commit": "7af7bc0aa70229fda6222f2d17d1b1ddbc2373c5",
+    "version": "1.0.8-0-g7af7bc0a",
+    "abi": "x86_64",
+    "sha256": "74ba578c1059968c10c0884cc290d74a84793d9b78713beb0805baef7fb0a53f",
+    "real_mpv_native_library_present": true
+  },
+  "emulator": {
+    "version": "37.2.12-16428233",
+    "image": "system-images/android-36/android-tv/x86_64",
+    "image_revision": 4,
+    "avd": "WholphinTV36",
+    "serial": "emulator-5560",
+    "acceleration": "WHPX",
+    "gpu": "host",
+    "memory_mib": 4096,
+    "cores": 4,
+    "screen": [1920, 1080],
+    "final_rpc_listener": "127.0.0.1:8560",
+    "token_required": true,
+    "unauthenticated_capture_result": "UNAUTHENTICATED",
+    "authenticated_capture_passed": true
+  },
+  "media": {
+    "origin": "original synthetic lab fixtures",
+    "duration_seconds": 90,
+    "video": {"codec": "h264", "resolution": [1280, 720], "fps": 30, "dynamic_range": "SDR"},
+    "audio": {"codec": "aac", "sample_rate": 48000, "channels": 1, "tone_hz": 440},
+    "tested_container": "mkv",
+    "embedded_subtitles": ["Hebrew SRT", "Hebrew ASS"],
+    "play_method": "DirectPlay",
+    "external_subtitles_indexed_but_playback_not_certified": true
+  },
+  "native_audio_captures": [
+    {"engine": "ExoPlayer", "pcm_bytes": 577316, "sample_rate": 48000, "channels": 2, "rms_s16": 28.81, "nonzero_samples": 286298, "wall_seconds": 3.023},
+    {"engine": "MPV", "pcm_bytes": 580992, "sample_rate": 48000, "channels": 2, "rms_s16": 28.83, "nonzero_samples": 288127, "wall_seconds": 3.025},
+    {"engine": "ExoPlayer during browser streaming", "pcm_bytes": 578408, "sample_rate": 48000, "channels": 2, "rms_s16": 28.84, "nonzero_samples": 286881, "wall_seconds": 3.023}
+  ],
+  "browser": {
+    "url": "http://127.0.0.1:18765/",
+    "transport": "WebRTC",
+    "video_codec_observed": "video/VP8",
+    "audio_codec_observed": "audio/opus",
+    "resolution": [1280, 720],
+    "target_capture_fps": 30,
+    "observed_display_fps_range": [21, 25],
+    "sampled_packet_loss": 0,
+    "sampled_dropped_frames_in_long_connection": 0,
+    "exoplayer_audio_energy_sample": 0.000006259186375680478,
+    "mpv_audio_energy_sample": 0.000026039748000804602,
+    "pause_clock_fix": "continuous paced audio frames, silence when native PCM is absent",
+    "connection_over_ten_minutes_observed": true,
+    "uninterrupted_ten_minute_movie_test": false,
+    "stun_turn_servers": [],
+    "lip_sync_measured": false
+  },
+  "input": {
+    "raw_mouse": "did not reliably activate tested TV controls",
+    "adapter": "separate UiAutomation instrumentation APK",
+    "browser_native_clicks_passed": ["Search", "Settings", "Advanced Settings", "ExoPlayer backend", "Hebrew SRT track"],
+    "keyboard_passed": ["D-pad navigation", "center activation", "Back", "pause/resume"],
+    "browser_enter_mapping": "Android D-pad center (23)",
+    "unicode_search_text_observed": "שלום עולם 123",
+    "pointer_seekbar": "tested click did not change position; incomplete"
+  },
+  "build": {
+    "task": ":app:assembleDefaultDebug",
+    "result": "passed",
+    "real_mpv_ffmpeg_av1_aars_present": true,
+    "source_debug_apk_used_for_playback": false,
+    "extension_commit": "cbb4af14c8e61845440ef2281096fc05e8976027",
+    "official_actions_artifact_id": 10279580428,
+    "artifact_sha256": "46c8101b3f333a9306088ddff49a2d150d483560b65614a3783a1c7cc12efb5d"
+  },
+  "unit_tests": {
+    "task": ":app:testDefaultDebugUnitTest",
+    "suites": 48,
+    "total": 382,
+    "passed": 378,
+    "failed": 4,
+    "skipped": 0,
+    "failed_suite": "ServerRepositoryTest",
+    "failure": "java.io.IOException renaming DataStore test_datastore.pb.tmp to test_datastore.pb on Windows",
+    "isolated_retry": {"total": 12, "passed": 8, "failed": 4},
+    "application_or_test_fix_attempted": false
+  },
+  "not_validated": [
+    "complete pointer/drag/seek semantics",
+    "every setting and server integration",
+    "hour-long audio/video/subtitle synchronization",
+    "HDR and Dolby Vision",
+    "receiver bitstream passthrough and Atmos/DTS/TrueHD fidelity",
+    "refresh-rate and resolution switching",
+    "4K and production streaming performance",
+    "external subtitle playback and fonts",
+    "LAN discovery and Internet deployment",
+    "finished desktop packaging"
+  ]
+}

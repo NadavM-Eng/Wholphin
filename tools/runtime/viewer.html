@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wholphin</title>
+<style>
+:root{color-scheme:dark;font:15px system-ui;background:#100d17;color:#ede4f5}*{box-sizing:border-box}body{margin:0}header{padding:14px 24px;display:flex;align-items:center;gap:16px;border-bottom:1px solid #342940}h1{font-size:20px;margin:0}header small{color:#aa9ab8}button,input{font:inherit}button{background:#392747;color:#f5edff;border:1px solid #674677;border-radius:8px;padding:8px 14px;cursor:pointer}button:hover{background:#503460}button:focus-visible,input:focus-visible{outline:2px solid #cca0e5;outline-offset:3px}#status{margin-left:auto;color:#b7a1c6}main{padding:16px 24px;max-width:1800px;margin:auto}#screen{position:relative;aspect-ratio:16/9;background:#000;border:1px solid #352841;border-radius:10px;overflow:hidden}video{display:block;width:100%;height:100%;object-fit:contain}#screen:focus-visible{outline:2px solid #d2afe8}#empty{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}#empty p{color:#b5a2c1}.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:14px}.controls input{flex:1;min-width:210px;background:#22192c;color:inherit;padding:9px 12px;border:1px solid #5c436c;border-radius:8px}#metrics{color:#a78fb7;font-size:12px;margin-top:10px;min-height:18px}#diagnostics{margin-top:12px;color:#a78fb7;font-size:12px}#remote{display:flex;gap:6px} .spacer{flex:1}@media(max-width:700px){header{padding:12px}main{padding:12px}header small{display:none}.spacer{display:none}}
+</style>
+<header><h1>Wholphin</h1><small>Local Android TV session</small><span id="status">Disconnected</span><button id="connect">Connect</button></header>
+<main>
+  <div id="screen" tabindex="0" aria-label="Wholphin screen. Use arrow keys, Enter, Escape, or click a control."><video id="video" autoplay playsinline muted></video><div id="empty"><h2>Your Wholphin session</h2><p>Connect to use the app with your keyboard and mouse.</p></div></div>
+  <div class="controls"><div id="remote"><button data-key="19" aria-label="Up">↑</button><button data-key="21" aria-label="Left">←</button><button data-key="23">Enter</button><button data-key="22" aria-label="Right">→</button><button data-key="20" aria-label="Down">↓</button><button data-key="4">Back</button><button data-key="85">Play / Pause</button></div><span class="spacer"></span><button id="sound">Sound off</button><button id="fullscreen">Fullscreen</button></div>
+  <div class="controls"><input id="text" aria-label="Text for the focused Wholphin field" placeholder="Text for the focused field — supports Hebrew"><button id="send-text">Send text</button></div>
+  <div id="metrics" aria-live="polite">Arrow keys navigate · Enter selects · Escape goes back · Space plays or pauses</div>
+  <details id="diagnostics"><summary>Connection details</summary><pre id="stats">Not connected</pre></details>
+</main>
+<script>
+let pc, channel, sequence=0, latestControl=null, counter=0;
+const video=document.querySelector('#video'), screen=document.querySelector('#screen'), status=document.querySelector('#status');
+window.runtimeDiagnostics={connected:false,controls:[],stats:{}};
+function command(payload){if(!channel||channel.readyState!=='open'){status.textContent='Connect first';return}const id=++sequence;channel.send(JSON.stringify({id,...payload}));window.runtimeDiagnostics.controls.push({id,command:payload.command,sent:performance.now()});}
+async function connect(){
+  if(pc)pc.close();
+  status.textContent='Connecting…';
+  pc=new RTCPeerConnection({iceServers:[]});
+  const stream=new MediaStream();video.srcObject=stream;
+  pc.addTransceiver('video',{direction:'recvonly'});pc.addTransceiver('audio',{direction:'recvonly'});
+  pc.ontrack=event=>{stream.addTrack(event.track);document.querySelector('#empty').style.display='none';video.play().catch(()=>{});};
+  pc.onconnectionstatechange=()=>{status.textContent=pc.connectionState;window.runtimeDiagnostics.connected=pc.connectionState==='connected';};
+  channel=pc.createDataChannel('control');
+  channel.onmessage=event=>{const message=JSON.parse(event.data);const record=window.runtimeDiagnostics.controls.find(item=>item.id===message.id);if(record){record.reply=message;record.roundtripMs=performance.now()-record.sent;message.roundtrip_ms=Math.round(record.roundtripMs*10)/10;}latestControl=message;};
+  await pc.setLocalDescription(await pc.createOffer());
+  if(pc.iceGatheringState!=='complete')await new Promise(resolve=>pc.addEventListener('icegatheringstatechange',()=>{if(pc.iceGatheringState==='complete')resolve();}));
+  const response=await fetch('/offer',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sdp:pc.localDescription.sdp,type:pc.localDescription.type})});
+  if(!response.ok)throw new Error('Could not connect to the local session');
+  await pc.setRemoteDescription(await response.json());screen.focus();
+}
+document.querySelector('#connect').onclick=()=>connect().catch(error=>status.textContent=error.message);
+document.querySelectorAll('[data-key]').forEach(button=>button.onclick=()=>command({command:'key',code:Number(button.dataset.key)}));
+screen.onkeydown=event=>{const codes={ArrowUp:19,ArrowDown:20,ArrowLeft:21,ArrowRight:22,Enter:23,Escape:4,Backspace:67,' ':85,Tab:61};if(event.key in codes){event.preventDefault();command({command:'key',code:codes[event.key]});}};
+screen.onclick=event=>{screen.focus();const rect=video.getBoundingClientRect();const scale=Math.min(rect.width/1920,rect.height/1080);const width=1920*scale,height=1080*scale;const left=rect.left+(rect.width-width)/2,top=rect.top+(rect.height-height)/2;const x=Math.round((event.clientX-left)/scale),y=Math.round((event.clientY-top)/scale);if(x>=0&&x<1920&&y>=0&&y<1080)command({command:'tap',x,y});};
+screen.onwheel=event=>{event.preventDefault();command({command:'scroll',delta:Math.sign(event.deltaY)});};
+document.querySelector('#send-text').onclick=()=>command({command:'text',text:document.querySelector('#text').value});
+document.querySelector('#sound').onclick=event=>{video.muted=!video.muted;event.target.textContent=video.muted?'Sound off':'Sound on';};
+document.querySelector('#fullscreen').onclick=()=>{if(document.fullscreenElement)document.exitFullscreen();else screen.requestFullscreen();};
+setInterval(async()=>{
+  if(!pc)return;
+  const reports=await pc.getStats(), results=[];
+  reports.forEach(report=>{if(report.type==='inbound-rtp'){results.push({kind:report.kind,codec:reports.get(report.codecId)?.mimeType,packets:report.packetsReceived,framesDecoded:report.framesDecoded,framesPerSecond:report.framesPerSecond,jitter:report.jitter,totalAudioEnergy:report.totalAudioEnergy,packetsLost:report.packetsLost});}});
+  const quality=video.getVideoPlaybackQuality();
+  const summary={connection:pc.connectionState,videoWidth:video.videoWidth,videoHeight:video.videoHeight,currentTime:video.currentTime,totalVideoFrames:quality.totalVideoFrames,droppedVideoFrames:quality.droppedVideoFrames,media:results,lastControl:latestControl};
+  window.runtimeDiagnostics.stats=summary;
+  document.querySelector('#stats').textContent=JSON.stringify(summary,null,2);
+  const fps=results.find(report=>report.kind==='video')?.framesPerSecond;
+  document.querySelector('#metrics').textContent=`${video.videoWidth} × ${video.videoHeight} · ${fps||'—'} fps · ${quality.totalVideoFrames} displayed frames${latestControl?.elapsed_ms!==undefined?' · Last control '+latestControl.elapsed_ms+' ms':''}`;
+},1000);
+</script>
+</html>

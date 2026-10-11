@@ -2,7 +2,9 @@
 
 The assessment supports a staged delivery plan: prove the original APK on a computer, then prove browser streaming, then choose a native port only if the measured results require it. The first product experiment should answer playback and input questions before substantial UI work starts.
 
-## Checks performed
+**Runtime update:** the original APK has now played the lab sample with both engines and Hebrew subtitles, and a local browser receives its video/audio with working input adaptation. Source assembly passes with real extensions; four of 382 upstream unit tests fail on Windows and reproduce in isolation. See [runtime results](runtime-results.md) for exact versions, evidence and outstanding gates. The table below preserves the earlier assessment checks.
+
+## Initial assessment checks, before runtime setup
 
 | Check | Outcome on 11 October 2026 |
 | --- | --- |
@@ -20,7 +22,7 @@ The assessment supports a staged delivery plan: prove the original APK on a comp
 | Hebrew resource inventory | Independently checked against parsed XML: 647 base string elements, 628 Hebrew string elements, 19 missing keys, including 6 non-translatable keys |
 | Upstream application changes | None in this assessment |
 
-The configure check is not an Android build or player test. No APK, emulator session, test-server login, native MPV session, subtitle render, or receiver/display validation was completed. Existing Android unit and instrumentation tests were not run because the SDK prerequisite is missing. Raw local Gradle logs are retained in excluded `.research-cache/`; the table records their relevant outcomes.
+At that initial assessment stage, the configure check was not an Android build or player test. No APK, emulator session, test-server login, native MPV session, subtitle render, or receiver/display validation had been completed, and Android tests could not run without the SDK. The subsequent runtime report supersedes those build and playback blockers. Physical receiver/display validation remains outstanding. Raw local logs are retained in excluded `.research-cache/`.
 
 The SDK source fetch hit Git's clone protection for an active checkout hook after the files were checked out. The source objects at the pinned tag were readable and the working tree was clean; no protection was disabled and the hook was not run. No SDK build was attempted. This did not affect the Wholphin source checkout.
 

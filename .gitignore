@@ -67,3 +67,4 @@ scripts/mpv/prefix/
 
 # Local source comparisons, browser profiles and assessment logs
 /.research-cache/
+/tools/runtime/__pycache__/
